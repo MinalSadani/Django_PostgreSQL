@@ -9,4 +9,3 @@ Following are the steps to be performed for the configuration:
 4. Django uses ORM (Object Relational Mapping) Layer. By default Django create database schema once the configuration is done. You just      need to migrate and run.
       python manage.py migrate
       python manage.py runserver
-
