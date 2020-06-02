@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <form action="login" method="post">
+        {% csrf_token %}
+        Username : <input type="text" name="username" placeholder="username"><br>
+        Password  : <input type="password" name="password"><br>
+        <input type="submit">
+    </form>
+    <div>
+    {% for message in messages %}
+    <h3> {{message}} </h3>
+    {% endfor %}
+    </div>
+    {% endblock %}
+
+</body>
+</html>

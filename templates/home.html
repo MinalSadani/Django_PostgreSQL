@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if user.is_authenticated %}
+Hello, {{user.first_name}}
+<a href="accounts/logout">Logout</a>
+{% else %}
+<a href="accounts/register">Register</a><br />
+<a href="accounts/login">Login</a>
+{% endif %}
+
+{% if user.is_authenticated %}
+{%  if all_sport  %}
+<h1>Items in the database:</h1>
+<ul>
+    {%  for sport in all_sport  %}
+    <li> {{ sport }}</a></li>
+    {% endfor %}
+</ul>
+
+{% else %}
+<h3> You don't have any data</h3>
+{%  endif %}
+{%  endif %}
+
+{% endblock %}
+
